@@ -22,6 +22,25 @@
         <p>a condição é falsa</p>
         @endif
 
-        <p>{{ $nome }}</p>
+        <p>{{ $nome }}</p> 
+        @for($i = 0; $i < count($arr); $i++)
+        <p>{{ $arr[$i] }} - {{$i}}</p>
+        @if($i==2)
+        <p>O i é igual a 2</p>
+        @endif
+        @endfor
+
+
+        @foreach ($nomes as $nome)
+        <p>{{$loop->index}}</p>
+        <p> {{$nome}} </p>
+            
+        @endforeach
+        @php
+$name = "Usando PHP nativo";
+echo $name;
+        @endphp
+
+        {{-- Exemplo de comentário com Blade --}}
     </body>
 </html>
